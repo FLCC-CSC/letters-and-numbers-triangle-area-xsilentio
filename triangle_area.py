@@ -1,8 +1,8 @@
 # FILE NAME - triangle_area.py
 
-# NAME: 
-# DATE: 
-# BRIEF DESCRIPTION:  
+# NAME: Katrina
+# DATE: 02/14/2025
+# BRIEF DESCRIPTION: Triangle area lab
 
 
 
@@ -17,14 +17,10 @@
 
 ########## ENTER YER CODE BELOW THIS LINE ##########
     
-    
-    
-    
-    
-    
-    
-    
-    
+height = float(input("Enter the height: "))
+base = float(input("Enter the base: "))
+print("The area of the triangle is", (1/2)*height*base)
+
     
 ########### END YER CODE ABOVE THIS LINE ###########
 
@@ -66,13 +62,13 @@ The area of the triangle is 16.0
 
 1. What is the flow of the program? Which line of code kicks off the process?
 
-
+The program starts by asking the user for input, this is represented in the first line of code. 
 
 
 
 2. What was the hardest part of this lab?
 
-
+No part was hard, though it wasn't instantly obvious which way to write the program was best -- whether to use an f-string or a + or a comma in the print statement; whether to convert the input into the int vs. float, etc.
 
 
 
