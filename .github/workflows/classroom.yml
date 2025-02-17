@@ -1,0 +1,35 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Test Case 1 [1, 1]
+      id: test-case-1-1-1
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Test Case 1 [1, 1]
+        setup-command: ''
+        command: python3 triangle_area.py
+        input: |-
+          1
+          1
+        expected-output: "Enter the height: Enter the base: \nThe area of the triangle
+          is 0.5"
+        comparison-method: exact
+        timeout: 10
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        TEST-CASE-1-1-1_RESULTS: "${{steps.test-case-1-1-1.outputs.result}}"
+      with:
+        runners: test-case-1-1-1
